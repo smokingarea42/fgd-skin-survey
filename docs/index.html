@@ -233,7 +233,7 @@ function buildCards(){
     var starsHtml = "";
     for(var i=5; i>=1; i--){ starsHtml += '<input type="radio" name="r-'+s.id+'" id="s-'+s.id+'-'+i+'" value="'+i+'"><label for="s-'+s.id+'-'+i+'" title="'+i+'">&#9733;</label>'; }
     var imgsHtml = "";
-    s.imgs.forEach(function(img){ imgsHtml += '<img src="images/'+img+'" alt="'+s.name+'" loading="lazy">'; });
+    s.imgs.forEach(function(img){ imgsHtml += '<img src="images/'+img+'?v=2" alt="'+s.name+'" loading="lazy">'; });
     h += '<div class="skin-card" id="card-'+s.id+'"><div class="card-header"><div class="theme-name">'+s.name+'</div></div><div class="image-gallery">'+imgsHtml+'</div><div class="rating-section"><span class="rating-label">Your Rating <span style="color:#d93025">*</span></span><div class="stars" id="stars-'+s.id+'">'+starsHtml+'</div><span class="rating-hint" id="hint-'+s.id+'">Not rated</span></div><div class="scale-legend"><span>1 &mdash; Poor</span><span>2 &mdash; Fair</span><span>3 &mdash; Good</span><span>4 &mdash; Very Good</span><span>5 &mdash; Excellent</span></div></div>';
   });
   container.innerHTML = h;
