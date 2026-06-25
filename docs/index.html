@@ -269,7 +269,7 @@ btn.addEventListener("click",function(){
   fields.forEach(vf);
   if(!infoDone()) return;
   var res = { nickname:fn.value.trim(), uid:fu.value.trim(), country:fc.value, playtime:fp.value, spending:fs.value, ratings:skinData.map(function(s){ return {theme:s.name,rating:ratings[s.id]}; }) };
-  fetch("/api/submit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(res)}).then(function(r){return r.json()}).then(function(d){console.log("Saved:",d);document.getElementById("thankYouModal").classList.add("active");}).catch(function(e){console.error(e);alert("Submission failed. Please try again.");});
+  fetch("https://script.google.com/macros/s/AKfycbz6do5kttmHqajSL-Iancl2k0m-k8t3Uila1dBXYk6WnyoZZ54aG5gDdZgEgniv05nL/exec",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(res)}).then(function(r){return r.json()}).then(function(d){console.log("Saved:",d);document.getElementById("thankYouModal").classList.add("active");}).catch(function(e){console.error(e);alert("Submission failed. Please try again.");});
 });
 
 function closeModal(){ document.getElementById("thankYouModal").classList.remove("active"); }
